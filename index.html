@@ -475,7 +475,14 @@
                     </div>
                     <div class="content-explanation">
                         <p class="text-xl text-gray-600 mb-4">
-                            Law-enforcement agencies operate under sensitive procedures and within resource-constrained environments. In this context, responsible AI adoption requires models that integrate with existing workflows, return source-traceable answers, and operate without exposing protected data. To meet these constraints, we prioritize self-hosted, domain-specialized, and right-sized models in controlled on-premises environments, reducing latency, cost, and compliance risk while aligning performance to operational needs. A central pillar is integrating expert knowledge into Small Language Models (SLMs): each area—cybercrime, financial crime, environmental crime, and digital forensics—has task-specific investigative knowledge that we internalize into small language models.
+                            <p>
+                            Organizations operating under sensitive procedures—particularly public-sector bodies such as law-enforcement agencies—rely heavily on explicit expert knowledge: rule-based systems, detection heuristics, and typologies of suspicious behaviour. These artefacts generalize poorly, provide little traceability from decisions to evidence, and often cannot leverage public-cloud LLM services due to confidentiality constraints.
+                            </p>
+
+                            <p>
+                            In this context, we integrate expert knowledge into self-hosted, domain-specialized small language models (SLMs). By internalizing expert patterns into model parameters, we obtain SLMs that provide semantic reasoning and equip existing systems with a semantic layer that enhances task-specific capabilities, while remaining compatible with on-premises constraints.
+                            </p>
+
                         </p>
                     </div>
                     <div class="content-image">

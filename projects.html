@@ -252,7 +252,7 @@
                         </li>
                         <li>
                             <strong>Step 3 — Pattern adapters.</strong>
-                            Using KG-derived features, a base graph neural network is first trained on fraud-versus-non-fraud labels to capture structural and statistical patterns of criminal behaviour. The encoder is then frozen and, for each fraud typology, a lightweight adapter and classification head are attached. Adapter activations are recorded as pattern-specific signals on the KG, allowing each decision to be decomposed into contributing patterns and traced back to the corresponding nodes, edges, and csv rows (Pfeiffer et al., 2021; Dagdelen et al., 2024; Li et al., 2024).
+                             Using KG-derived features, a base graph neural network with a global fraud-versus-non-fraud head is first trained to capture structural and statistical patterns of criminal behaviour. The encoder and global head are then kept for inference, and, for each fraud typology, a lightweight adapter and classification head are attached. Adapter activations are logged as pattern-specific signals on the KG, so that each global decision can be decomposed into contributing patterns and traced back to the relevant nodes, edges, and CSV rows \citep{pfeiffer2021adapterfusion,li2024adaptergnn}.
                         </li>
                     </ol>
                 </div>

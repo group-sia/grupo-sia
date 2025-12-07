@@ -259,7 +259,7 @@
                             </li>
                             <li>
                                 <strong>Step 3 — Pattern adapters (expert knowledge).</strong>
-                                Structural and statistical features from the knowledge graph (KG) are used to train a base encoder with a dual-head architecture: a global fraud-versus-non-fraud head to capture unknown patterns and a multi-label typology head that captures known laundering patterns (Paranjape et al., 2017; Arnold et al., 2024; Verlaan et al., 2025). At inference time, the global head is combined with the typology-specific head, so that predictions merge a global fraud score with typology-specific scores (Pfeiffer et al., 2021), providing decision traceability from each model output down to the contributing nodes, edges, and source CSV rows.
+                                Structural and statistical features from the knowledge graph (KG) are used to train a base encoder with a dual-head architecture: a global fraud-versus-non-fraud head to capture unknown patterns and a multi-label typology head that captures known laundering patterns (Paranjape et al., 2017; Arnold et al., 2024; Verlaan et al., 2025). At inference time, the global head is combined with the typology-specific head (Pfeiffer et al., 2021), providing decision traceability from each model output down to the contributing nodes, edges, and source CSV rows.
                             </li>
                         </ul>
                     </ol>

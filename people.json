@@ -4,50 +4,50 @@
     "role": "Digital Forensics Expert – Federal Police",
     "website": "",
     "google_scholar": "https://scholar.google.com/citations?user=FgCv-7kAAAAJ&hl=pt-BR",
-    "linkedin": "www.linkedin.com/in/lindeberg-leite",
+    "linkedin": "https://www.linkedin.com/in/lindeberg-leite",
     "photo": "",
-    "type": ""
+    "type": "group_leader"
   },
 
   "members": [
-  {
-    "name": "Ricardo Penck Benazzi",
-    "role": "Digital Forensics Expert (Special Class) –  Federal Police",
-    "website": "",
-    "google_scholar": "",
-    "linkedin": "",
-    "photo": "",
-    "type": "member"
-  },
-  {
-    "name": "Roberto Zaina",
-    "role": "Federal Police Officer (Special Class) –  Federal Police",
-    "website": "",
-    "google_scholar": "",
-    "linkedin": "",
-    "photo": "",
-    "type": "member"
-  }
- ],
+    {
+      "name": "Ricardo Penck Benazzi",
+      "role": "Digital Forensics Expert (Special Class) – Federal Police",
+      "website": "",
+      "google_scholar": "",
+      "linkedin": "",
+      "photo": "",
+      "type": "member"
+    },
+    {
+      "name": "Roberto Zaina",
+      "role": "Federal Police Officer (Special Class) – Federal Police",
+      "website": "",
+      "google_scholar": "",
+      "linkedin": "",
+      "photo": "",
+      "type": "member"
+    }
+  ],
 
   "current": [
     {
       "name": "Prof. Dr. Felipe Campelo",
-      "role": "Associate Professor of Data Science - University of Bristol",
+      "role": "Associate Professor of Data Science – University of Bristol",
       "website": "https://research-information.bris.ac.uk/en/persons/felipe-campelo/",
       "google_scholar": "https://scholar.google.com/citations?user=jKGZEXIAAAAJ&hl=pt-BR",
       "linkedin": "https://uk.linkedin.com/in/felipe-campelo-60653049",
       "photo": "",
-      "type": ""
+      "type": "external_collaborator"
     },
     {
       "name": "Dr. Teofilo Emidio de Campos",
-      "role": "Senior Applied Scientist at Microsoft Applied Sciences Group",
+      "role": "Senior Applied Scientist – Microsoft Applied Sciences Group",
       "website": "https://teodecampos.github.io/",
       "google_scholar": "https://scholar.google.com/citations?user=dMZCMp0AAAAJ&hl=pt-BR",
       "linkedin": "https://uk.linkedin.com/in/teofilo",
       "photo": "",
-      "type": ""
+      "type": "external_collaborator"
     }
   ]
 }

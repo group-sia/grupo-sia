@@ -25,17 +25,25 @@
             font-family: 'Plantin MT Pro', serif;
         }
         .text-harvard-crimson { color: #AA8F3D; }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
         .group-member {
             padding: 1rem;
             background-color: #f9fafb;
             border-radius: 0.5rem;
             border-left: 4px solid #A41034;
         }
+
         .current-member {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+
         .photo-placeholder {
             width: 80px;
             height: 80px;
@@ -46,18 +54,22 @@
             justify-content: center;
             color: #6b7280;
         }
+
         .member-name {
             font-weight: 600;
             color: #A41034;
         }
+
         .social-links {
             display: inline-flex;
             gap: 0.4rem;
             margin-left: 0.5rem;
         }
+
         .social-link:hover {
             transform: scale(1.15);
         }
+
         .main-content {
             padding-top: 100px;
         }
@@ -66,6 +78,47 @@
 
 <body>
 
+<!-- ===== HEADER / MENU ===== -->
+<header class="fixed top-0 left-0 right-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-lg font-semibold">
+            <a href="index.html">
+                <span class="text-harvard-crimson">BRAIN</span> Group
+            </a>
+        </div>
+
+        <nav class="hidden md:flex space-x-8 text-gray-500">
+            <a href="projects.html">Projects</a>
+            <a href="people.html" class="text-harvard-crimson">People</a>
+            <a href="https://brainpf.github.io/brain-group/" target="_blank">GitHub</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="md:hidden">
+            <button id="menu-btn">
+                <svg id="icon-open" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3">
+        <a href="projects.html" class="block px-3 py-2">Projects</a>
+        <a href="people.html" class="block px-3 py-2 text-harvard-crimson">People</a>
+        <a href="https://brainpf.github.io/brain-group/" target="_blank" class="block px-3 py-2">GitHub</a>
+        <a href="contact.html" class="block px-3 py-2">Contact</a>
+    </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
 <div class="main-content">
     <div class="container mx-auto max-w-6xl px-6 py-8">
 
@@ -73,17 +126,17 @@
             <h1 class="text-5xl text-harvard-crimson">People</h1>
         </div>
 
-        <section id="principal-investigator">
+        <section>
             <h2 class="text-3xl mb-8">Group Leader</h2>
             <div id="principal-investigator-container" class="space-y-6"></div>
         </section>
 
-        <section id="members" class="mt-12">
+        <section class="mt-12">
             <h2 class="text-3xl mb-8">Members</h2>
             <div id="members-container" class="space-y-6"></div>
         </section>
 
-        <section id="external-collaborators" class="mt-12">
+        <section class="mt-12">
             <h2 class="text-3xl mb-8">External Collaborators</h2>
             <div id="external-collaborators-container" class="space-y-6"></div>
         </section>
@@ -92,7 +145,14 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', loadPeopleData);
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('menu-btn').onclick = () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.getElementById('icon-open').classList.toggle('hidden');
+        document.getElementById('icon-close').classList.toggle('hidden');
+    };
+    loadPeopleData();
+});
 
 function createSocialLinks(person) {
     const box = document.createElement('span');
@@ -146,30 +206,25 @@ function createMemberElement(person) {
 }
 
 async function loadPeopleData() {
-    try {
-        const data = await (await fetch('people.json')).json();
+    const data = await (await fetch('people.json')).json();
 
-        if (data.principal_investigator) {
-            document.getElementById('principal-investigator-container')
-                .appendChild(createMemberElement(data.principal_investigator));
-        }
+    if (data.principal_investigator) {
+        document.getElementById('principal-investigator-container')
+            .appendChild(createMemberElement(data.principal_investigator));
+    }
 
-        if (data.members) {
-            data.members.forEach(p =>
-                document.getElementById('members-container')
-                    .appendChild(createMemberElement(p))
-            );
-        }
+    if (data.members) {
+        data.members.forEach(p =>
+            document.getElementById('members-container')
+                .appendChild(createMemberElement(p))
+        );
+    }
 
-        if (data.current) {
-            data.current.forEach(p =>
-                document.getElementById('external-collaborators-container')
-                    .appendChild(createMemberElement(p))
-            );
-        }
-
-    } catch (e) {
-        console.error(e);
+    if (data.current) {
+        data.current.forEach(p =>
+            document.getElementById('external-collaborators-container')
+                .appendChild(createMemberElement(p))
+        );
     }
 }
 </script>

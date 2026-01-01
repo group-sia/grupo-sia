@@ -240,7 +240,7 @@
                   <!--  <span class="font-semibold">Researchers:</span> Dr. Lindeberg Pessoa Leite -->
                 </p>
                 <p class="text-gray-700 mt-2">
-                    Financial crime is among the criminal activities that move the largest volumes of money, making it a central priority for law-enforcement agencies and financial-intelligence units. In this context, the Brazilian Bank Transaction Investigation System (SIMBA) serves to organize the secure transfer of banking data between financial institutions and law-enforcement agencies after judicial authorization to lift bank secrecy.  
+                    Financial crime ranks among the criminal activities involving the largest volumes of illicit financial flows, making it a central priority for law-enforcement agencies and financial-intelligence units. In this context, the Brazilian Bank Transaction Investigation System (SIMBA) is used to organize the secure transfer of banking data between financial institutions and law-enforcement authorities, following judicial authorization to lift bank secrecy.
                 </p>
                 <p class="text-gray-700 mt-2">
                     Today, SIMBA-based investigations currently rely on ad hoc graph queries and rule-based filters that are hard to maintain, do not generalize well across cases, and offer limited source-level traceability. At the same time, the high sensitivity of SIMBA banking data prevents their use with public-cloud LLMs, while limited on-premise hardware makes large models infeasible locally, creating a need for small models that internalize expert patterns, remain auditable, and run on the Brazilian Federal Police’s existing infrastructure.
@@ -258,11 +258,11 @@
                             </li>
                             <li>
                                 <strong>Step 2 — Knowledge Graph and Provenance.</strong>
-                                From the SIMBA csv files, a knowledge graph (KG) of accounts, people, agencies, and relations is constructed. The KG resolves identities, supports incremental updates, exposes multi-hop structures for visualization, and maintains pointers to original SIMBA rows and keys (Rashkin et al., 2023).
+                                From the SIMBA csv files, a knowledge graph (KG) of accounts, people, agencies, and transactions is constructed. The KG resolves identities, supports incremental updates, exposes multi-hop structures for visualization, and maintains pointers to original SIMBA rows and keys (Rashkin et al., 2023).
                             </li>
                             <li>
-                                <strong>Step 3 — Pattern adapters (expert knowledge).</strong>
-                                Structural and statistical features from the knowledge graph (KG) are used to train a base model with a dual-head architecture: a global fraud-versus-non-fraud head to capture unknown patterns and a multi-label typology head that captures known laundering patterns (Paranjape et al., 2017; Arnold et al., 2024; Verlaan et al., 2025). At inference time, the global head is combined with the typology-specific head (Pfeiffer et al., 2021), providing decision traceability from each model output down to the contributing nodes, edges, and source CSV rows.
+                                <strong>Step 3 — Topology Adapters with Logic Explanations.</strong>
+                                Structural and statistical features from the knowledge graph (KG) are used to train a GNN base model. Expert knowledge is incorporated modularly by introducing one adapter per laundering topology, while an additional general adapter is trained to capture previously unseen behaviors. Since the GNN alone does not provide rule-level interpretability, a symbolic logic layer is trained jointly with the GNN to produce human-interpretable justifications that are not naturally produced by the neural component.
                             </li>
                         </ul>
                     </ol>

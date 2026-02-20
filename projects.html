@@ -234,7 +234,7 @@
             <!-- Projeto: Financial-Crime Detection -->
             <div class="project-card">
                 <h2 class="text-2xl md:text-3xl font-semibold text-harvard-crimson">
-                    A Reasoner to Support Anti-Money Laundering Investigation
+                     An Auditable Method for Anti-Money Laundering Investigations
                 </h2>
                 <p class="text-sm text-gray-500 mb-4">
                   <!--  <span class="font-semibold">Researchers:</span> Dr. Lindeberg Pessoa Leite -->
@@ -257,12 +257,12 @@
                                 Due to the sensitivity of real records, all experiments are conducted on a simulator calibrated to produce SIMBA-like txt data (Altman et al., 2023). 
                             </li>
                             <li>
-                                <strong>Step 2 — Knowledge Graph.</strong>
-                                From the SIMBA txt files, a knowledge graph (KG) of accounts, people, agencies, and transactions is constructed. The KG exposes multi-hop structures for visualization, and maintains pointers to original SIMBA rows and keys (Rashkin et al., 2023).
+                                <strong>Step 2 — Provenance-Ready Knowledge Graph</strong>
+                                 SIMBA TXT files are transformed into a knowledge graph (accounts, people, agencies, transactions) designed for auditability: every entity and relation retains pointers back to the originating SIMBA rows/keys, enabling evidence-level traceability and multi-hop inspection.
                             </li>
                             <li>
-                                <strong>Step 3 — Governable Layer.</strong>
-                                The method detects topological primitives via deterministic graph pattern matching, while a GNN provides only a weak triage signal for noisy cases beyond deterministic coverage. A governable layer composes validated primitives into laundering typologies through versioned rules, yielding provenance-linked explanations (Cardoso et al., 2022).
+                                <strong>Step 3 — Auditable Decision Layer.</strong>
+                                The system detects topological primitives via deterministic graph pattern matching, using a lightweight ML signal only for triage. A decision layer then composes validated primitives into laundering typologies through <em>versioned</em> rules and produces a decision audit trail, explicitly linking each conclusion to the underlying evidence and transformations.
                             </li>
                         </ul>
                     </ol>

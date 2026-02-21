@@ -243,7 +243,7 @@
                     Crimes financeiros estão entre as atividades criminosas associadas aos maiores volumes de fluxos financeiros ilícitos, o que os torna uma prioridade central para órgãos de aplicação da lei e unidades de inteligência financeira. Nesse contexto, o Sistema de Investigação de Movimentações Bancárias (SIMBA) é utilizado para organizar a transferência segura de dados bancários entre instituições financeiras e autoridades de persecução penal, mediante autorização judicial para a quebra de sigilo bancário.
                 </p>
                 <p class="text-gray-700 mt-2">
-                    Atualmente, investigações baseadas no SIMBA dependem de consultas ad hoc em grafos e filtros baseados em regras que são difíceis de manter, não generalizam bem entre casos e oferecem rastreabilidade limitada no nível da fonte. Ao mesmo tempo, a alta sensibilidade dos dados bancários do SIMBA impede seu uso com LLMs em nuvem pública, enquanto o hardware on-premises limitado torna inviáveis modelos grandes localmente, criando a necessidade de modelos pequenos que internalizem padrões de especialistas, permaneçam auditáveis e rodem na infraestrutura existente da Polícia Federal.
+                    Atualmente, investigações baseadas no SIMBA dependem de consultas ad hoc em grafos ou filtros baseados em regras que são difíceis de manter, não generalizam bem entre casos e oferecem auditabilidade limitada no nível de decisão. Ao mesmo tempo, a alta sensibilidade dos dados bancários do SIMBA impede seu uso com LLMs em nuvem pública, enquanto o hardware on-premises limitado torna inviáveis modelos grandes localmente, criando a necessidade de modelos pequenos que internalizem padrões de especialistas, que rodem na infraestrutura existente da Polícia Federal.
                 </p>
                 <p class="text-gray-700">
                     Neste projeto, o método é estruturado em três etapas:
@@ -253,16 +253,16 @@
                     <ol>
                         <ul class="steps-list">
                             <li>
-                                <strong>Etapa 1 — SIMBA Sintético.</strong>
+                                <strong>Etapa 1 — SIMBA sintético.</strong>
                                 Devido à sensibilidade dos registros reais, todos os experimentos são conduzidos em um simulador calibrado para produzir dados txt no estilo do SIMBA (Altman et al., 2023).
                             </li>
                             <li>
-                                <strong>Etapa 2 — Grafo de Conhecimento Pronto para Proveniência.</strong>
+                                <strong>Etapa 2 — Grafo de conhecimento com proveniência.</strong>
                                 Arquivos TXT do SIMBA são transformados em um grafo de conhecimento (contas, pessoas, agências, transações) projetado para auditabilidade: cada entidade e relação mantém ponteiros para as linhas/chaves de origem no SIMBA, permitindo rastreabilidade no nível da evidência e inspeção multi-hop.
                             </li>
                             <li>
                                 <strong>Etapa 3 — Camada de Decisão Auditável.</strong>
-                                O sistema detecta primitivas topológicas via casamento determinístico de padrões no grafo, usando um sinal leve de ML apenas para triagem. Em seguida, uma camada de decisão compõe primitivas validadas em tipologias de lavagem por meio de regras <em>versionadas</em> e produz uma trilha de auditoria da decisão, ligando explicitamente cada conclusão às evidências e transformações subjacentes.
+                                O sistema detecta primitivas topológicas via padrões determinístico em grafos, usando, como complemento, triagem via Machine Learing para detectar variações no padrão determinístico. Em seguida, a camada de decisão gera uma trilha de auditoria que vincula cada conclusão às evidências.
                             </li>
                         </ul>
                     </ol>

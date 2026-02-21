@@ -1,7 +1,7 @@
 {
   "principal_investigator": {
     "name": "Dr. Lindeberg Pessoa Leite",
-    "role": "Federal Police Forensic Expert in Digital Forensics",
+    "role": "Perito Criminal Federal",
     "website": "",
     "google_scholar": "https://scholar.google.com/citations?user=FgCv-7kAAAAJ&hl=pt-BR",
     "linkedin": "https://www.linkedin.com/in/lindeberg-leite",
@@ -12,7 +12,7 @@
   "members": [
     {
       "name": "Ricardo Penck Benazzi",
-      "role": "Federal Police Forensic Expert in Accounting",
+      "role": "Perito Criminal Federal",
       "website": "",
       "google_scholar": "",
       "linkedin": "",
@@ -21,7 +21,7 @@
     },
     {
       "name": "M.Sc. Roberto Zaina",
-      "role": "Federal Police Officer",
+      "role": "Agente de Polícia Federal",
       "website": "",
       "google_scholar": "",
       "linkedin": "",
@@ -30,7 +30,7 @@
     },
     {
       "name": "M.Sc. Jairo Brandão de Santana",
-      "role": "Federal Police Officer",
+      "role": "Agente de Polícia Federal",
       "website": "",
       "google_scholar": "",
       "linkedin": "",

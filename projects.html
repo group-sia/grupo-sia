@@ -240,10 +240,10 @@
                   <!--  <span class="font-semibold">Researchers:</span> Dr. Lindeberg Pessoa Leite -->
                 </p>
                 <p class="text-gray-700 mt-2">
-                    Crimes financeiros estão entre as atividades criminosas associadas aos maiores volumes de fluxos financeiros ilícitos, o que os torna uma prioridade central para órgãos de aplicação da lei e unidades de inteligência financeira. Nesse contexto, o Sistema de Investigação de Movimentações Bancárias (SIMBA) é utilizado para organizar a transferência segura de dados bancários entre instituições financeiras e autoridades de persecução penal, mediante autorização judicial para a quebra de sigilo bancário.
+                    Crimes financeiros estão entre as atividades criminosas associadas aos maiores volumes de fluxos financeiros ilícitos, o que os torna uma prioridade central para órgãos policiais e unidades de inteligência financeira. Nesse contexto, o Sistema de Investigação de Movimentações Bancárias (SIMBA) é utilizado para organizar a transferência segura de dados bancários entre instituições financeiras e autoridades de persecução penal, mediante autorização judicial para a quebra de sigilo bancário.
                 </p>
                 <p class="text-gray-700 mt-2">
-                    Atualmente, investigações baseadas no SIMBA dependem de consultas ad hoc em grafos ou filtros baseados em regras que são difíceis de manter, não generalizam bem entre casos e oferecem auditabilidade limitada no nível de decisão. Ao mesmo tempo, a alta sensibilidade dos dados bancários do SIMBA impede seu uso com LLMs em nuvem pública, enquanto o hardware on-premises limitado torna inviáveis modelos grandes localmente, criando a necessidade de modelos pequenos que internalizem padrões de especialistas, que rodem na infraestrutura existente da Polícia Federal.
+                    Atualmente, investigações baseadas no SIMBA dependem de consultas ad hoc em grafos ou filtros baseados em regras que são difíceis de manter, não generalizam bem entre casos e oferecem auditabilidade limitada no nível de decisão. Ao mesmo tempo, a alta sensibilidade dos dados bancários do SIMBA impede soluções em nuvem pública, criando a necessidade de sistema que rodem na infraestrutura local da Polícia Federal.
                 </p>
                 <p class="text-gray-700">
                     Neste projeto, o método é estruturado em três etapas:
@@ -258,11 +258,11 @@
                             </li>
                             <li>
                                 <strong>Etapa 2 — Grafo de conhecimento com proveniência.</strong>
-                                Arquivos TXT do SIMBA são transformados em um grafo de conhecimento (contas, pessoas, agências, transações) projetado para auditabilidade: cada entidade e relação mantém ponteiros para as linhas/chaves de origem no SIMBA, permitindo rastreabilidade no nível da evidência e inspeção multi-hop.
+                                Arquivos TXT do SIMBA são transformados em um grafo de conhecimento (contas, pessoas, agências, transações) projetado para auditabilidade: cada entidade e relação mantém ponteiros para as linhas/chaves de origem no SIMBA, permitindo rastreabilidade no nível da evidência e inspeção em níveis.
                             </li>
                             <li>
                                 <strong>Etapa 3 — Camada de Decisão Auditável.</strong>
-                                O sistema detecta primitivas topológicas via padrões determinístico em grafos, usando, como complemento, triagem via Machine Learing para detectar variações no padrão determinístico. Em seguida, a camada de decisão gera uma trilha de auditoria que vincula cada conclusão às evidências.
+                                O sistema detecta primitivas topológicas via padrões determinístico em grafos, usando, como complemento, triagem via Machine Learning para detectar variações no padrão determinístico. Em seguida, a camada de decisão gera uma trilha de auditoria que vincula cada conclusão às evidências.
                             </li>
                         </ul>
                     </ol>
